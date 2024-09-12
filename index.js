@@ -50,7 +50,7 @@ app.post("/send", function (req, res) {
     //   image: "https://lojasolar.vtexassets.com/arquivos/ids/177192-1200-auto"
     // },
 
-    token: "eeHjZ9rKQgG-eP8jw-Y28Z:APA91bFHiypw_-CIpssDGcXOpJanL47iEYcEAyf_Ob8C44PBt8d7KhnupAykR_hpw0CVAvSpq51vCHg5Orzsudj_EAPempp2WFkq4UgXUJKfjjcd27t1616ILSSrgLL6cix4O19qP3Ep",
+    token: "dqUUcymDSeCuxrgm0XDMTW:APA91bGxes206V76W8NTLJS2Mt-08lLsbE5WUZO9e3lwOUCyzDO3vbJa7wMrJTJ1nMwzRbJoBViaYSNP-0D7WYvP9jmFQIXN5q4mzwhW3SY521E96nm2D24UTMl1XYmZr7sbXphRy4XN",
     data: {
       title: "Bom dia, bem vindo.",
       body: "Seja bem vindo as notificações do novo app solar!",
