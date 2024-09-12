@@ -40,7 +40,7 @@ initializeApp({
 
 app.post("/send", function (req, res) {
   const receivedToken = req.body.fcmToken;
-///eeHjZ9rKQgG-eP8jw-Y28Z:APA91bFHiypw_-CIpssDGcXOpJanL47iEYcEAyf_Ob8C44PBt8d7KhnupAykR_hpw0CVAvSpq51vCHg5Orzsudj_EAPempp2WFkq4UgXUJKfjjcd27t1616ILSSrgLL6cix4O19qP3Ep
+
   const message = {
     // data: {score: '850', time: '2:45'},
     // notification: {
