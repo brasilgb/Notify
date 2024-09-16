@@ -39,32 +39,20 @@ initializeApp({
 });
 
 app.post("/send", function (req, res) {
-  const receivedToken = req.body.fcmToken;
-
+  const {data, tokens} = req.body;
+// token: "dqUUcymDSeCuxrgm0XDMTW:APA91bGxes206V76W8NTLJS2Mt-08lLsbE5WUZO9e3lwOUCyzDO3vbJa7wMrJTJ1nMwzRbJoBViaYSNP-0D7WYvP9jmFQIXN5q4mzwhW3SY521E96nm2D24UTMl1XYmZr7sbXphRy4XN",
   const message = {
-    // data: {score: '850', time: '2:45'},
-    // notification: {
-    //   title: "Bom dia, bem vindo.",
-    //   body: "Seja bem vindo as notificações do novo app solar!",
-    //   clickAction: "https://www.lojasolar.com.br/carrinho-de-mao-cacamba-50l-azul-77704-432-tramontina/p",
-    //   image: "https://lojasolar.vtexassets.com/arquivos/ids/177192-1200-auto"
-    // },
-
-    token: "dqUUcymDSeCuxrgm0XDMTW:APA91bGxes206V76W8NTLJS2Mt-08lLsbE5WUZO9e3lwOUCyzDO3vbJa7wMrJTJ1nMwzRbJoBViaYSNP-0D7WYvP9jmFQIXN5q4mzwhW3SY521E96nm2D24UTMl1XYmZr7sbXphRy4XN",
-    data: {
-      title: "Bom dia, bem vindo.",
-      body: "Seja bem vindo as notificações do novo app solar!",
-      url: "https://www.lojasolar.com.br/carrinho-de-mao-cacamba-50l-azul-77704-432-tramontina/p",
-      image: "https://lojasolar.vtexassets.com/arquivos/ids/177192-1200-auto"
-    }
+    data: data,
+    tokens: tokens
   };
 
   getMessaging()
-    .send(message)
+    .sendEachForMulticast(message)
     .then((response) => {
       res.status(200).json({
-        message: "Successfully sent message",
-        token: receivedToken,
+        message: "Mensagem enviada com sucesso.",
+        success: response.successCount,
+        failure: response.failureCount,
       });
       console.log("Successfully sent message:", response);
     })
@@ -73,10 +61,8 @@ app.post("/send", function (req, res) {
       res.send(error);
       console.log("Error sending message:", error);
     });
-
-
 });
 
-app.listen(3000, function () {
-  console.log("Server started on port 3000");
+app.listen(3333, function () {
+  console.log("Server started on port 3333");
 });
