@@ -40,7 +40,7 @@ initializeApp({
 
 app.post("/send", function (req, res) {
   const {data, tokens} = req.body;
-// token: "dqUUcymDSeCuxrgm0XDMTW:APA91bGxes206V76W8NTLJS2Mt-08lLsbE5WUZO9e3lwOUCyzDO3vbJa7wMrJTJ1nMwzRbJoBViaYSNP-0D7WYvP9jmFQIXN5q4mzwhW3SY521E96nm2D24UTMl1XYmZr7sbXphRy4XN",
+
   const message = {
     data: data,
     tokens: tokens
